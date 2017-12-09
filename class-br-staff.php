@@ -9,6 +9,7 @@ Version: 0.6.3
 Text Domain: wordpress-importer
 License: GPL version 2 or later - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 */
+if ( ! defined( '_JEXEC' ) ) { die( 'unatuhorized' ); }
 class Br_Staff {
 
 	public function __construct() {
