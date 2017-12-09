@@ -90,8 +90,8 @@ class Br_Staff {
 
 	 // SHOW THE FEATURED IMAGE
 	public function brs_columns_content( $column_name, $post_id ) {
-		if ( $shortcode == $column_name ) {
-				echo '[br_person id=' . $post_id . ']';
+		if ( 'shortcode' == $column_name ) {
+				echo '<input type="text" value="[br_person id=' . esc_attr( $post_id ) . ']"></input>';
 		}
 	}
 
