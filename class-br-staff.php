@@ -58,14 +58,14 @@ class Br_Staff {
 				$the_query->the_post();
 				$contents .= '<div class="staff-member-div">
 								<div class="span4">
-									<img class="staff-portrait" src="' . get_post_meta( get_the_ID(), 'br_portrait', true ) . '" />
-									<p class="title-text">' . get_post_meta( get_the_ID(), 'br_title', true ) . '</p>
+									<img class="staff-portrait" src="' . esc_attr( get_post_meta( get_the_ID(), 'br_portrait', true ) ) . '" />
+									<p class="title-text">' . esc_attr( get_post_meta( get_the_ID(), 'br_title', true ) ) . '</p>
 								</div>
 
 				<div class="span8">
-						<div class="name-text">' . get_post_meta( get_the_ID(), 'br_name', true ) . '
+						<div class="name-text">' . esc_attr( get_post_meta( get_the_ID(), 'br_name', true ) ) . '
 						<div class="cool-underline" style="width: 40%;"><div style="background: #E6E6E6; width: 80%; height: 4px; position: relative; bottom: 0%; margin-left: 20%;"></div></div></div>
-						 <div class="bio-text">' . get_post_meta( get_the_ID(), 'br_bio', true ) . '</div>
+						 <div class="bio-text">' . esc_attr( get_post_meta( get_the_ID(), 'br_bio', true ) ) . '</div>
 				</div>
 
 				</div>';
