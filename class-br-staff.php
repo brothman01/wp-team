@@ -9,7 +9,10 @@ Version: 0.6.3
 Text Domain: wordpress-importer
 License: GPL version 2 or later - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 */
-if ( ! defined('ABSPATH') ) { die( 'unatuhorized' ); }
+if ( ! defined( 'ABSPATH' ) ) {
+	die( 'unatuhorized' );
+}
+
 class Br_Staff {
 
 	public function __construct() {
@@ -29,6 +32,11 @@ class Br_Staff {
 		add_action( 'manage_posts_custom_column', [ $this, 'brs_columns_content' ], 10, 2 );
 
 		add_shortcode( 'br_person', [ $this, 'br_person_shortcode_function' ] );
+
+		/**
+		 * Add the filter to run this function whenever the hook is hit.
+		 */
+		add_filter( 'template_include', [ $this, 'brs_include_template' ], 1 );
 
 		add_action( 'wp_enqueue_scripts', [ $this, 'brs_enqueue_styles' ] );
 	}
@@ -58,10 +66,12 @@ class Br_Staff {
 			while ( $the_query->have_posts() ) {
 				$the_query->the_post();
 				$contents .= '<div class="staff-member-div">
+							<a href="' . get_permalink() . '">
 								<div class="span4">
 									<img class="staff-portrait" src="' . esc_attr( get_post_meta( get_the_ID(), 'br_portrait', true ) ) . '" />
 									<p class="title-text">' . esc_attr( get_post_meta( get_the_ID(), 'br_title', true ) ) . '</p>
 								</div>
+							</a>
 
 				<div class="span8">
 						<div class="name-text">' . esc_attr( get_post_meta( get_the_ID(), 'br_name', true ) ) . '
@@ -80,7 +90,27 @@ class Br_Staff {
 		 return $contents;
 	}
 
-	 // ADD NEW COLUMN
+	/**
+	* Function used to force the site to use my custom templpate for the single 'portfolio_item' page.
+	*
+	* @since 0.1
+	*/
+	public function brs_include_template( $template_path ) {
+
+		if ( get_post_type() == 'br_person' ) {
+				$theme_file = plugin_dir_path( __FILE__ ) . 'single-person.php';
+				$template_path = $theme_file;
+		}
+
+		return $template_path;
+
+	}
+
+	/**
+	 * Add new column for shortcodes to the CPT table.
+	 * @param  array $defaults array of the columns that will show for each item in the CPT table.
+	 * @return [type]           [description]
+	 */
 	public function brs_columns_head( $defaults ) {
 
 		if ( 'br_person' == get_post_type() ) {
