@@ -121,15 +121,6 @@ function cmb2_sample_metaboxes() {
 			'options' => array( 'textarea_rows' => 5, ),
 		) );
 
-		$cmb->add_field( array(
-				'name'       => __( 'Shortcode', 'cmb2' ),
-				'desc'       => __( '', 'cmb2' ),
-				'id'         => $prefix . 'shortcode',
-				'type'       => 'text',
-				'show_on_cb' => 'cmb2_hide_if_no_cats', // function should return a bool value
-				'default' => 'prefix_set_test_default',
-		) );
-
 }
 
 function prefix_set_test_default( $field_args, $field ) {
