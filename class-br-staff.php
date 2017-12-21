@@ -132,7 +132,7 @@ class Br_Staff {
 	 */
 	public function brs_enqueue_styles() {
 
-		wp_enqueue_style( 'main-style', plugin_dir_url( __FILE__ ) . 'library/css/style.css' );
+		wp_enqueue_style( 'main-style', plugin_dir_url( __FILE__ ) . 'library/css/styl.css' );
 
 	}
 
