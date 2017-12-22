@@ -18,6 +18,7 @@ wp_register_script( 'cp_script', plugin_dir_url( __FILE__ ) . '/library/js/chatp
 wp_enqueue_script( 'cp_script' );
 
  ?>
+ // foobar
 
 			<div class="container">
 
