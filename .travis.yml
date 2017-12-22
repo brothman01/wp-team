@@ -35,8 +35,6 @@ install:
 - curl https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli-nightly.phar
   > /tmp/wp-cli.phar
 - chmod +x /tmp/wp-cli.phar
-before_script:
-- bash bin/install-wp-tests.sh wordpress_test root '' localhost $WP_VERSION
 script:
 - source $DEV_LIB_PATH/travis.script.sh
 after_script:
