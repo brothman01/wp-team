@@ -17,7 +17,7 @@ wp_enqueue_script( 'carousel_script' );
 wp_register_script( 'cp_script', plugin_dir_url( __FILE__ ) . '/library/js/chatpress.js', array( 'jquery' ), 'all', true );
 wp_enqueue_script( 'cp_script' );
 
- ?>
+?>
 
 			<div class="container">
 
