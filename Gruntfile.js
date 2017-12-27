@@ -274,4 +274,8 @@ module.exports = function(grunt) {
 		'wp_readme_to_markdown'
 	] );
 
+  grunt.registerTask( 'jshint', [
+		'jshint'
+	] );
+
 };
