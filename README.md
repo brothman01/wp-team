@@ -9,7 +9,7 @@
 
 ## Description ##
 
-A simple WordPress plugin that create an employee custom post type that has custom fields so that a person with relatively little technical knowledge can make changes to their own site it they have a new employee to add because the team section of the site generates the page code based off of the values entered in each of the corresponding fields.
+Just a simple WordPress plugin that creates an employee custom post type that has custom fields to generate an employee page or section. The plugin is designed so that a person with a relatively small amount of technical knowledge can make changes to their own site if they have a new employee to add.
 
 
 ## Installation ##
