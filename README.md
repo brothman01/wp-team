@@ -18,3 +18,6 @@ Just a simple WordPress plugin that creates an employee custom post type that ha
 2. unzip the zip file into your plugin directory
  OR
  install the plugin via the plugin repository.
+
+## To Use The Plugin:
+add new employees by filling out the fields pertaining to them, then add the shortcode from the shortcode column on the list view pertaining to that person.
