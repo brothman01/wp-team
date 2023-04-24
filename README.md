@@ -1,4 +1,4 @@
-# WP Employees #
+# WP Team #
 **Contributors:** [brothman01](https://profiles.wordpress.org/brothman01)  
 **Tags:** [CPT](https://wordpress.org/themes/tags/productivity/), [Custom Fields](https://wordpress.org/themes/tags/monitor/), [Human-friendly](https://wordpress.org/themes/tags/updates/), [intuitive](https://wordpress.org/themes/tags/php/)
 **Requires at least:** 4.6  
