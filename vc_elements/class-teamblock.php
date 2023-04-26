@@ -24,6 +24,8 @@ class TeamBlock {
 // The Query
 $the_query = new WP_Query( [
 	'post_type' => 'br_person',
+	'orderby' => 'title',
+	'order'   => 'ASC',
 ]);
 
 // The Loop
@@ -31,17 +33,17 @@ if ( $the_query->have_posts() ) {
 
 	while ( $the_query->have_posts() ) {
 		$the_query->the_post();
-		$content .= '<div class="staff-member-div">
+		$content .= '<div class="staff-member-div" style="float:left; width: 100%; border: solid red 1px;">
 					<a href="' . get_permalink() . '">
-						<div class="span4">
-							<img class="staff-portrait" src="' . esc_attr( get_post_meta( get_the_ID(), 'br_portrait', true ) ) . '" />
-							<p class="title-text">' . esc_attr( get_post_meta( get_the_ID(), 'br_title', true ) ) . '</p>
+						<div class="span4" style="float: left; padding-top: 10px;  width: 33%;  text-align: center;">
+							<img class="staff-portrait" src="' . esc_attr( get_post_meta( get_the_ID(), 'br_portrait', true ) ) . '" style="width: 124px; margin: 0px auto" />
+							<br />
+							<p class="title-text" style="padding: 0px 0px 0px 0px!important; text-align: center;">' . esc_attr( get_post_meta( get_the_ID(), 'br_title', true ) ) . '</p>
 						</div>
 					</a>
 
 		<div class="span8">
-				<div class="name-text">' . esc_attr( get_post_meta( get_the_ID(), 'br_name', true ) ) . '
-				<div class="cool-underline" style="width: 40%;"><div style="background: #E6E6E6; width: 80%; height: 4px; position: relative; bottom: 0%; margin-left: 20%;"></div></div></div>
+				<div class="name-text">' . esc_attr( get_post_meta( get_the_ID(), 'br_name', true ) ) . '</div>
 				 <div class="bio-text">' . esc_attr( get_post_meta( get_the_ID(), 'br_bio', true ) ) . '</div>
 		</div>
 
