@@ -39,6 +39,11 @@ class Br_Staff {
 		add_filter( 'template_include', [ $this, 'brs_include_template' ], 1 );
 
 		add_action( 'wp_enqueue_scripts', [ $this, 'brs_enqueue_styles' ] );
+
+
+		// vc block stuff \\
+		include_once( plugin_dir_path( __FILE__ ) . 'vc_elements/class-teamblock.php' );
+		$teamblock = new TeamBlock();
 	}
 
 	/**
