@@ -20,4 +20,7 @@ Just a simple WordPress plugin that creates an employee custom post type that ha
  install the plugin via the plugin repository.
 
 ## To Use The Plugin:
-add new employees by filling out the fields pertaining to them, then add the shortcode from the shortcode column on the list view pertaining to that person.
+add new employees by filling out the fields pertaining to them in the custom fields added to their post on the WP Dashboard.Then you have a choice of how to display the information:
+1) Add the shortcode from the shortcode column on the list view pertaining to that person.
+2) Add the teampage component to a page in visual composer
+3) **UNDER CONSTRUCTION** Add the block to a page in the built in WordPress block editor.
