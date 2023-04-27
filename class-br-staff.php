@@ -17,25 +17,23 @@ class Br_Staff {
 
 	public function __construct() {
 
-		/* Register Post Types */
+		// Register Post Types \\
 		require_once( 'post-types/br-person.php' );
 
-		// Enqueue CMB2
+		// Enqueue CMB2 \\
 		if ( file_exists( dirname( __FILE__ ) . '/cmb2/init.php' ) ) {
 			require_once dirname( __FILE__ ) . '/cmb2/init.php';
 		} elseif ( file_exists( dirname( __FILE__ ) . '/CMB2/init.php' ) ) {
 			require_once dirname( __FILE__ ) . '/CMB2/init.php';
 		}
 
-		// add custom row to table
+		// add custom row to table \\
 		add_filter( 'manage_posts_columns', [ $this, 'brs_columns_head' ] );
 		add_action( 'manage_posts_custom_column', [ $this, 'brs_columns_content' ], 10, 2 );
 
 		add_shortcode( 'br_person', [ $this, 'br_person_shortcode_function' ] );
 
-		/**
-		 * Add the filter to run this function whenever the hook is hit.
-		 */
+		// Add the filter to include this template \\
 		add_filter( 'template_include', [ $this, 'brs_include_template' ], 1 );
 
 		add_action( 'wp_enqueue_scripts', [ $this, 'brs_enqueue_styles' ] );
@@ -47,10 +45,10 @@ class Br_Staff {
 	}
 
 	/**
- * [br_person_shortcode_function description]
- * @param  array $atts Is an array although only item of the array is the id of the staff member to use.
- * @return [type]       [description]
- */
+	 * br_person_shortcode_function
+	 * @param  array $atts Only has one item, the id of the staff member to draw information from.
+	 * @return string The code that goes in place of the shortcode with all of the formmating and correct information.
+	 */
 	public function br_person_shortcode_function( $atts ) {
 
 		$attributes = shortcode_atts( array(
@@ -59,13 +57,12 @@ class Br_Staff {
 
 		$contents = '';
 
-		// The Query
 		$the_query = new WP_Query( [
 			'post_type' => 'br_person',
 			'p' => (int) $atts['id'],
 		]);
 
-		// The Loop
+		// iterate through the query to build the code for the shortcode \\
 		if ( $the_query->have_posts() ) {
 
 			while ( $the_query->have_posts() ) {
@@ -89,7 +86,7 @@ class Br_Staff {
 			/* Restore original Post Data */
 			wp_reset_postdata();
 		} else {
-			// no posts found
+			// no posts found so do nothing \\
 		}
 
 		 return $contents;
@@ -114,7 +111,8 @@ class Br_Staff {
 	/**
 	 * Add new column for shortcodes to the CPT table.
 	 * @param  array $defaults array of the columns that will show for each item in the CPT table.
-	 * @return [type]           [description]
+	 * @since 0.1
+	 * @return none, changes the wp admin dashboard
 	 */
 	public function brs_columns_head( $defaults ) {
 
@@ -124,7 +122,7 @@ class Br_Staff {
 			return $defaults;
 	}
 
-	 // SHOW THE FEATURED IMAGE
+	 // show the featured image \\
 	public function brs_columns_content( $column_name, $post_id ) {
 		if ( 'shortcode' == $column_name ) {
 				echo '<input type="text" value="[br_person id=' . esc_attr( $post_id ) . ']"></input>';
