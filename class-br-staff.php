@@ -42,6 +42,9 @@ class Br_Staff {
 		// vc block stuff \\
 		include_once( plugin_dir_path( __FILE__ ) . 'vc_elements/class-teamblock.php' );
 		$teamblock = new TeamBlock();
+
+		// WordPress block action \\
+		add_action( 'init', [ $this, 'brs_create_block' ] );
 	}
 
 	/**
@@ -138,6 +141,14 @@ class Br_Staff {
 		wp_enqueue_style( 'main-style', plugin_dir_url( __FILE__ ) . 'library/css/styl.css' );
 
 	}
+
+	/* 
+	 * Add the block to the WordPress block editor
+	 */
+	public function brs_create_block() {
+		register_block_type( __DIR__ . '/wordpress-block/build' );
+	}
+	
 
 }
 
