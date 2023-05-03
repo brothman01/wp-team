@@ -12,14 +12,10 @@
 <div id="staff-block-vanilla" style="overflow: hidden;">
   <script>
   const staff = JSON.parse( httpGet('http://dev.local/wp-json/wp/v2/br_person') );
+  const block = document.getElementById('staff-block-vanilla');
   let theCode = '';
   staff.forEach(element => theCode += createRow(element));
-  staff.forEach(element => console.log(element));
-
-  var block = document.getElementById('staff-block-vanilla');
   block.innerHTML = theCode;
-  // console.log(theCode);
-
 
 function createRow(item) {
   let thePermalink = item.link;
@@ -30,14 +26,14 @@ function createRow(item) {
 
   let theRow = `<div class="staff-member-div" style="float:left; width: 100%">
 							<a href="` + thePermalink + `">
-								<div class="span4" style="float: left; padding-top: 10px;  width: 33%;  text-align: center;">
+								<div style="float: left;">
 									<img class="staff-portrait" src="` + thePortrait + `" style="width: 124px; margin: 0px auto" />
 									<br />
 									<p class="title-text" style="padding: 0px 0px 0px 0px!important; text-align: center;">` + theTitle + `</p>
 								</div>
 							</a>
 
-				<div class="span8">
+				<div style="float: left;">
 						<div class="name-text"><b>` + theName + `</b></div>
 						<div class="bio-text">` + theBio + `</div>
 				</div>
