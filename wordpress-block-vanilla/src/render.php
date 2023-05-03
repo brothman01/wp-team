@@ -3,7 +3,7 @@
 
   <script>
   // Get each staff member created on the WP dashboard with the REST API and parse the data into a usable array
-  const staff = JSON.parse( httpGet('http://dev.local/wp-json/wp/v2/br_person') );
+  const staff = JSON.parse( httpGet(window.location.origin + '/wp-json/wp/v2/br_person') );
 
   // Sort each staff member so that they are ordered to appear on the page alphabetically by the slug
   staff.sort(function(a, b){
