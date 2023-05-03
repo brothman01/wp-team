@@ -139,7 +139,7 @@ class Br_Staff {
 	 */
 	public function brs_enqueue_styles() {
 
-		wp_enqueue_style( 'main-style', plugin_dir_url( __FILE__ ) . 'library/css/styl.css' );
+		wp_enqueue_style( 'main-style', plugin_dir_url( __FILE__ ) . 'library/css/style.css' );
 
 	}
 
@@ -157,6 +157,7 @@ class Br_Staff {
 	 */
 	public function brs_create_block() {
 		register_block_type( __DIR__ . '/wordpress-block-vanilla/build' );
+		register_block_type( __DIR__ . '/wordpress-block-react/build' );
 	}
 	
 
