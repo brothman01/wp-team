@@ -4,7 +4,7 @@
  * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-registration/
  */
 import { registerBlockType } from '@wordpress/blocks';
-
+import ReactDOM from 'react-dom';
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
  * All files containing `style` keyword are bundled together. The code used
@@ -13,7 +13,7 @@ import { registerBlockType } from '@wordpress/blocks';
  * @see https://www.npmjs.com/package/@wordpress/scripts#using-css
  */
 import './style.scss';
- 
+
 /**
  * Internal dependencies
  */
@@ -21,7 +21,9 @@ import Edit from './edit';
 import metadata from './block.json';
 import App from './App.js';
 
-// ReactDOM.render(<App />, document.getElementById('render_here'));
+setTimeout( () => {
+	ReactDOM.render(<App />, document.getElementById('staff-block-react'));
+}, 2500);
 
 /**
  * Every block starts by registering a new block type definition.

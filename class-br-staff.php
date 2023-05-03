@@ -10,7 +10,7 @@ Text Domain: wordpress-importer
 License: GPL version 2 or later - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 */
 if ( ! defined( 'ABSPATH' ) ) {
-	die( 'unatuhorized' );
+	die( 'unauthorized' );
 }
 
 class Br_Staff {
@@ -36,6 +36,7 @@ class Br_Staff {
 		// Add the filter to include this template \\
 		add_filter( 'template_include', [ $this, 'brs_include_template' ], 1 );
 
+		// enqueue scripts and styles \\
 		add_action( 'wp_enqueue_scripts', [ $this, 'brs_enqueue_styles' ] );
 
 
@@ -43,7 +44,7 @@ class Br_Staff {
 		include_once( plugin_dir_path( __FILE__ ) . 'vc_elements/class-teamblock.php' );
 		$teamblock = new TeamBlock();
 
-		// WordPress block action \\
+		// WordPress block actions \\
 		add_action( 'init', [ $this, 'brs_create_block' ] );
 		add_filter( 'register_post_type_args', [ $this, 'brs_add_cpts_to_api' ], 10, 2 );
 	}
