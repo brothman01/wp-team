@@ -9,7 +9,7 @@
     return xmlHttp.responseText;
 }
 </script>
-<div id="staff-block-vanilla" style="overflow: hidden;">
+<div id="staff-block-vanilla" style="overflow: hidden; max-width: 100%!important">
   <script>
   const staff = JSON.parse( httpGet('http://dev.local/wp-json/wp/v2/br_person') );
   const block = document.getElementById('staff-block-vanilla');
