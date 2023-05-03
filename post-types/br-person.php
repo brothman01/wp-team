@@ -60,7 +60,7 @@ function init_remove_support() {
 		remove_post_type_support( 'br_person', 'editor' );
 }
 
-add_action( 'cmb2_admin_init', 'cmb2_sample_metaboxes' );
+add_action( 'cmb2_init', 'cmb2_sample_metaboxes' );
 /**
  * Define the metabox and field configurations.
  */
@@ -71,12 +71,13 @@ function cmb2_sample_metaboxes() {
 		 * Initiate the metabox
 		 */
 		$cmb = new_cmb2_box( array(
-				'id'            => 'test_metabox',
+				'id'            => 'custom fields',
 				'title'         => __( 'Staff Member', 'cmb2' ),
 				'object_types'  => array('br_person' ), // Post type
 				'context'       => 'normal',
 				'priority'      => 'high',
 				'show_names'    => true, // Show field names on the left
+				'show_in_rest' => true,
 				// 'cmb_styles' => false, // false to disable the CMB stylesheet
 				// 'closed'     => true, // Keep the metabox closed by default
 		) );
@@ -88,10 +89,6 @@ function cmb2_sample_metaboxes() {
 				'id'         => $prefix . 'name',
 				'type'       => 'text',
 				'show_on_cb' => 'cmb2_hide_if_no_cats', // function should return a bool value
-				// 'sanitization_cb' => 'my_custom_sanitization', // custom sanitization callback parameter
-				// 'escape_cb'       => 'my_custom_escaping',  // custom escaping callback parameter
-				// 'on_front'        => false, // Optionally designate a field to wp-admin only
-				// 'repeatable'      => true,
 		) );
 
 		$cmb->add_field( array(
@@ -108,10 +105,6 @@ function cmb2_sample_metaboxes() {
 				'id'         => $prefix . 'title',
 				'type'       => 'text',
 				'show_on_cb' => 'cmb2_hide_if_no_cats', // function should return a bool value
-				// 'sanitization_cb' => 'my_custom_sanitization', // custom sanitization callback parameter
-				// 'escape_cb'       => 'my_custom_escaping',  // custom escaping callback parameter
-				// 'on_front'        => false, // Optionally designate a field to wp-admin only
-				// 'repeatable'      => true,
 		) );
 
 		$cmb->add_field( array(
