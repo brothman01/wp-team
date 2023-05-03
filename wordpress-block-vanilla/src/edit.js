@@ -33,7 +33,7 @@ export default function Edit() {
 	return (
 		<p { ...useBlockProps() }>
 			{ __(
-				'Clock',
+				'Team page (vanillajs)',
 				'example-dynamic'
 			) }
 		</p>
