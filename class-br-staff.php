@@ -45,7 +45,7 @@ class Br_Staff {
 
 		// WordPress block action \\
 		add_action( 'init', [ $this, 'brs_create_block' ] );
-		add_filter( 'register_post_type_args', [ $this, 'sb_add_cpts_to_api' ], 10, 2 );
+		add_filter( 'register_post_type_args', [ $this, 'brs_add_cpts_to_api' ], 10, 2 );
 	}
 
 	/**
@@ -144,7 +144,7 @@ class Br_Staff {
 	}
 
 	//add this to your functions.php file in your theme folder
-	public function sb_add_cpts_to_api( $args, $post_type ) {
+	public function brs_add_cpts_to_api( $args, $post_type ) {
 	if ( 'result' === $post_type ) {
 	$args['show_in_rest'] = true;
 	}

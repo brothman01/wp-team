@@ -1,5 +1,5 @@
 <?php
-function custom_post_type() {
+function create_staff__custom_post_type() {
 
 		$labels = array(
 			'name'                  => _x( 'Staff Members', 'Post Type General Name', 'text_domain' ),
@@ -52,19 +52,19 @@ function custom_post_type() {
 		register_post_type( 'br_person', $args );
 
 }
-add_action( 'init', 'custom_post_type', 0 );
+add_action( 'init', 'create_staff__custom_post_type', 0 );
 
-
+// remove the editor from staff members' CPT
 add_action( 'init', 'init_remove_support', 100 );
 function init_remove_support() {
 		remove_post_type_support( 'br_person', 'editor' );
 }
 
-add_action( 'cmb2_init', 'cmb2_sample_metaboxes' );
+add_action( 'cmb2_init', 'cmb2_initialize_metaboxes' );
 /**
- * Define the metabox and field configurations.
+ * Define the metabox and add fields.
  */
-function cmb2_sample_metaboxes() {
+function cmb2_initialize_metaboxes() {
 		$prefix = 'br_';
 
 		/**
@@ -78,11 +78,9 @@ function cmb2_sample_metaboxes() {
 				'priority'      => 'high',
 				'show_names'    => true, // Show field names on the left
 				'show_in_rest' => true,
-				// 'cmb_styles' => false, // false to disable the CMB stylesheet
-				// 'closed'     => true, // Keep the metabox closed by default
 		) );
 
-		// Regular text field
+		// Add a regular text field
 		$cmb->add_field( array(
 				'name'       => __( 'Display Name', 'cmb2' ),
 				'desc'       => __( '', 'cmb2' ),
@@ -91,6 +89,7 @@ function cmb2_sample_metaboxes() {
 				'show_on_cb' => 'cmb2_hide_if_no_cats', // function should return a bool value
 		) );
 
+		// add the image field for the portrait
 		$cmb->add_field( array(
 			'name' => esc_html__( 'Portrait', 'cmb2' ),
 			'desc' => esc_html__( 'Upload an image or enter a URL.', 'cmb2' ),
@@ -98,7 +97,7 @@ function cmb2_sample_metaboxes() {
 			'type' => 'file',
 		) );
 
-		// Regular text field
+		// Add a regular text field
 		$cmb->add_field( array(
 				'name'       => __( 'Title', 'cmb2' ),
 				'desc'       => __( '', 'cmb2' ),
@@ -107,6 +106,7 @@ function cmb2_sample_metaboxes() {
 				'show_on_cb' => 'cmb2_hide_if_no_cats', // function should return a bool value
 		) );
 
+		// add the wysiwyg field for the bio
 		$cmb->add_field( array(
 			'name'    => esc_html__( 'Bio', 'cmb2' ),
 			'desc'    => esc_html__( 'field description (optional)', 'cmb2' ),
