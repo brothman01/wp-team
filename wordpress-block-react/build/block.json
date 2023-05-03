@@ -1,0 +1,16 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "create-block/example-react",
+  "version": "0.1.0",
+  "title": "Team Block (react)",
+  "category": "embed",
+  "icon": "smiley",
+  "description": "Example block scaffolded with Create Block tool.",
+  "supports": {
+    "html": false
+  },
+  "textdomain": "example-dynamic",
+  "editorScript": "file:./index.js",
+  "render": "file:./render.php"
+}
