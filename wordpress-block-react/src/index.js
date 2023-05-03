@@ -21,7 +21,7 @@ import Edit from './edit';
 import metadata from './block.json';
 import App from './App.js';
 
-ReactDOM.render(<App />, document.getElementById('staff-block-react'));
+// ReactDOM.render(<App />, document.getElementById('render_here'));
 
 /**
  * Every block starts by registering a new block type definition.

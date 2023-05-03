@@ -5,4 +5,4 @@ function App() {
         <p>foobar</p>
     )
 }
-export default App; 
+export default App;
