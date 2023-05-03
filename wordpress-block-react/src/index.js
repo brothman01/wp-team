@@ -19,6 +19,9 @@ import './style.scss';
  */
 import Edit from './edit';
 import metadata from './block.json';
+import App from './App.js';
+
+ReactDOM.render(<App />, document.getElementById('staff-block-react'));
 
 /**
  * Every block starts by registering a new block type definition.
