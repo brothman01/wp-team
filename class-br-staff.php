@@ -158,7 +158,7 @@ class Br_Staff {
 	 * Add the block to the WordPress block editor
 	 */
 	public function brs_create_block() {
-		register_block_type( __DIR__ . '/wordpress-block-vanilla/build' );
+		register_block_type( __DIR__ . '/wordpress-block-vanillajs/build' );
 		register_block_type( __DIR__ . '/wordpress-block-react/build' );
 	}
 	
