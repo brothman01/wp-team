@@ -36,9 +36,8 @@ class Br_Staff {
 		// Add the filter to include this template \\
 		add_filter( 'template_include', [ $this, 'brs_include_template' ], 1 );
 
-		// enqueue scripts and styles \\
+		// enqueue scripts, styles and react block \\
 		add_action( 'wp_enqueue_scripts', [ $this, 'brs_enqueue_styles' ] );
-
 
 		// vc block stuff \\
 		include_once( plugin_dir_path( __FILE__ ) . 'vc_elements/class-teamblock.php' );
@@ -141,6 +140,8 @@ class Br_Staff {
 	public function brs_enqueue_styles() {
 
 		wp_enqueue_style( 'main-style', plugin_dir_url( __FILE__ ) . 'library/css/style.css' );
+
+		wp_enqueue_script( 'index', plugin_dir_url( __FILE__) . 'wordpress-block-react/build/index.js', array( 'wp-element' ), '1.0.0', true );
 
 	}
 

@@ -8,12 +8,11 @@
 	"icon": "smiley",
 	"description": "Example block scaffolded with Create Block tool.",
 	"supports": {
-		"html": false
+		"html": false 
 	},
 	"textdomain": "example-dynamic",
-	"editorScript": "file:./index.js",
+	"editorScript": "file:./editor.js",
 	"editorStyle": "file:./index.css",
 	"style": "file:./style-index.css",
-	"render": "file:./render.php",
-	"script": "file:./index.js"
+	"render": "file:./render.php"
 }
