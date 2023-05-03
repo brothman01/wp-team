@@ -1,8 +1,27 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-function App() {
-    return(
-        <p>foobar</p>
-    )
+class App extends React.Component {
+
+  constructor( props ) {
+    super( props );
+    this.state = {
+      clicks: 0
+    };
+  }
+
+  toggle = () => {
+    this.setState( ( prevState ) => ( {
+      clicks: prevState.clicks + 1
+    } ) );
+  }
+
+  render() {
+    return (
+      <div>
+        foobara
+      </div>
+    );
+  }
 }
+
 export default App;
