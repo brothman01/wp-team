@@ -71,7 +71,7 @@ function cmb2_sample_metaboxes() {
 		 * Initiate the metabox
 		 */
 		$cmb = new_cmb2_box( array(
-				'id'            => 'custom fields',
+				'id'            => 'custom_fields',
 				'title'         => __( 'Staff Member', 'cmb2' ),
 				'object_types'  => array('br_person' ), // Post type
 				'context'       => 'normal',
