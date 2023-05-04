@@ -74,7 +74,7 @@ createRow(item) {
   render() {
     return (
       <div>
-        {this.createRows()}
+        <div dangerouslySetInnerHTML={{__html: this.createRows()}} />
       </div>
     );
   }
