@@ -14,6 +14,9 @@ Just a simple WordPress plugin that creates an employee custom post type that ha
 ## How To Use ##
 After activating the plugin there will be a new button on the WordPress dashboard called 'Staff'.  Enter the staff dashboard page and create a post for each staff member on your team.  There will be fields to fill out for each new staff member to fill in when editing the staff member on the dashboard.  Once the staff members are filled in, add the WP Team block or the shortcode to your page.  The information from the staff members is automatically used to generate the team page.  The team page can be put on a page using the shortcode, one of the two WordPress native block editor blocks or the Visual Composer block depending on your preference.
 
+## How do I set the order the staff members appear on the team page?
+The order that the members appear in is determined by the post slug, they appear in alphabetical order by the slug value.
+
 
 ## To Use The Plugin:
 Add new employees by filling out the fields pertaining to them in the custom fields added to their post on the WP Dashboard.Then you have a choice of how to display the information:
