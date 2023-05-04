@@ -2,7 +2,7 @@
 **Contributors:** [brothman01](https://profiles.wordpress.org/brothman01)  
 **Tags:** [CPT](https://wordpress.org/themes/tags/productivity/), [Custom Fields](https://wordpress.org/themes/tags/monitor/), [Human-friendly](https://wordpress.org/themes/tags/updates/), [intuitive](https://wordpress.org/themes/tags/php/)
 **Requires at least:** 4.6  
-**Tested up to:** 5.7  
+**Tested up to:** 6.2
 **Stable tag:** 1.1  
 **License:** GPLv2 or later  
 **License URI:** https://www.gnu.org/licenses/gpl-2.0.html  
