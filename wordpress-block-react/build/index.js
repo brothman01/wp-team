@@ -39,20 +39,21 @@ class App extends (react__WEBPACK_IMPORTED_MODULE_1___default().Component) {
     const {
       posts
     } = this.state;
+    const test = [];
 
     // check if posts exists and has a non-zero length
     if (posts && posts.length) {
       // declare k for the key outside of the loop
       let k = 1;
-      const listItems = posts.map((post, index) => this.createRow(post));
-      return listItems;
+      const listItems = posts.map((post, index) => {
+        test.push(this.createRow(post));
+      });
+      return test;
     }
-    return true;
   };
 
   // function to generate a row to display in the block for each staff member
   createRow(item) {
-    console.log(item);
     let thePermalink = item.link;
     let theName = item.cmb2.custom_fields.br_name;
     let theBio = item.cmb2.custom_fields.br_bio;
@@ -60,29 +61,43 @@ class App extends (react__WEBPACK_IMPORTED_MODULE_1___default().Component) {
     let theTitle = item.cmb2.custom_fields.br_title;
 
     // create the row for the post using the data entered into the fields on the dashboard \\
-    let theRow = `<div class="staff-member-div" style="float:left; width: 100%">
-							<a href="` + thePermalink + `">
-								<div style="float: left;">
-									<img class="staff-portrait" src="` + thePortrait + `" style="width: 124px; margin: 0px auto" />
-									<br />
-									<p class="title-text" style="padding: 0px 0px 0px 0px!important; text-align: center;">` + theTitle + `</p>
-								</div>
-							</a>
-
-				<div style="float: left;">
-						<div class="name-text"><b>` + theName + `</b></div>
-						<div class="bio-text">` + theBio + `</div>
-				</div>
-
-				</div>`;
-    return theRow;
+    return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      class: "staff-member-div",
+      style: {
+        float: "left",
+        width: "100%"
+      }
+    }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
+      href: thePermalink
+    }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      style: {
+        float: "left"
+      }
+    }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
+      class: "staff-portrait",
+      src: thePortrait,
+      style: {
+        width: "124px",
+        margin: "0px auto"
+      }
+    }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("br", null), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+      class: "title-text",
+      style: {
+        padding: "0px 0px 0px 0px",
+        textAlign: "center"
+      }
+    }, theTitle))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      style: {
+        float: "left"
+      }
+    }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      class: "name-text"
+    }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("b", null, theName)), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      class: "bio-text"
+    }, theBio)));
   }
   render() {
-    return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-      dangerouslySetInnerHTML: {
-        __html: this.createRows()
-      }
-    }));
+    return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, this.createRows());
   }
 }
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (App);
