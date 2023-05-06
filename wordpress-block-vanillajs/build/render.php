@@ -28,16 +28,16 @@ function createRow(item) {
   let thePortrait = item.cmb2.custom_fields.br_portrait;
   let theTitle = item.cmb2.custom_fields.br_title;
 
-  let theRow = `<div class="staff-member-div" style="float:left; width: 100%">
+  let theRow = `<div class="staff-member-div">
 							<a href="` + thePermalink + `">
-								<div style="float: left;">
-									<img class="staff-portrait" src="` + thePortrait + `" style="width: 124px; margin: 0px auto" />
+								<div>
+									<img class="staff-portrait" src="` + thePortrait + `" />
 									<br />
-									<p class="title-text" style="padding: 0px 0px 0px 0px!important; text-align: center;">` + theTitle + `</p>
+									<p class="title-text" ">` + theTitle + `</p>
 								</div>
 							</a>
 
-				<div style="float: left;">
+				<div>
 						<div class="name-text"><b>` + theName + `</b></div>
 						<div class="bio-text">` + theBio + `</div>
 				</div>

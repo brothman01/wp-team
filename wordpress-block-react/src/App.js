@@ -52,12 +52,12 @@ class App extends React.Component {
     let theTitle = item.cmb2.custom_fields.br_title;
 
     // create the row for the post using the data entered into the fields on the dashboard \\
-    return <div class="staff-member-div" style={{float: "left", width: "100%"}}>
+    return <div class="staff-member-div">
       <a href={thePermalink}>
         <div style={{float: "left"}}>
-          <img class="staff-portrait" src={thePortrait} style={{width: "124px", margin: "0px auto"}} />
+          <img class="staff-portrait" src={thePortrait} />
           <br />
-          <p class="title-text" style={{padding: "0px 0px 0px 0px", textAlign: "center"}}>{theTitle}</p>
+          <p class="title-text">{theTitle}</p>
         </div>
       </a>
 

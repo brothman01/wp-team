@@ -62,11 +62,7 @@ class App extends (react__WEBPACK_IMPORTED_MODULE_1___default().Component) {
 
     // create the row for the post using the data entered into the fields on the dashboard \\
     return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-      class: "staff-member-div",
-      style: {
-        float: "left",
-        width: "100%"
-      }
+      class: "staff-member-div"
     }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
       href: thePermalink
     }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -75,17 +71,9 @@ class App extends (react__WEBPACK_IMPORTED_MODULE_1___default().Component) {
       }
     }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
       class: "staff-portrait",
-      src: thePortrait,
-      style: {
-        width: "124px",
-        margin: "0px auto"
-      }
+      src: thePortrait
     }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("br", null), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
-      class: "title-text",
-      style: {
-        padding: "0px 0px 0px 0px",
-        textAlign: "center"
-      }
+      class: "title-text"
     }, theTitle))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
       style: {
         float: "left"
