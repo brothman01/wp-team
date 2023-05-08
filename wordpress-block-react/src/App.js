@@ -26,21 +26,18 @@ class App extends React.Component {
     // declare the state variable as a constant
     const { posts } = this.state;
 
-    const test = [];
+    const people = [];
 
     // check if posts exists and has a non-zero length
     if (posts && posts.length) {
-
-      // declare k for the key outside of the loop
-      let k = 1
-
-      const listItems = posts.map( ( post, index ) => {
-        test.push(this.createRow(post));
+      const items = posts.map( ( post, index ) => {
+        people.push(this.createRow(post));
       } );
 
-      return test;
+      return people;
 
     }
+
   }
 
   // function to generate a row to display in the block for each staff member
