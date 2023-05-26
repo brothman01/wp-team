@@ -12,9 +12,14 @@
       return 0;
     });
 
-  // generate the code for each of the rows using the data retrieved for each staff member
   let theCode = '';
+
+  // generate the code for each of the rows using the data retrieved for each staff member
+  if ( staff.length != 0 ) {
   staff.forEach(element => theCode += createRow(element));
+  } else {
+    theCode = '<p>No staff members to show.  Please fill out staff members on the WP dashboard to populate this page.</p>';
+  }
 
   // Add the resulting code to the block
   const block = document.getElementById('staff-block-vanilla');
