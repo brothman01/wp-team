@@ -54,6 +54,8 @@ class TeamBlock {
 			}
 			/* Restore original Post Data */
 			wp_reset_postdata();
+		} else {
+			$content = '<p>No staff members to show.  Please fill out staff members on the WP dashboard to populate this page.</p>';
 		}
 		$content .= '</div>';
 		if ( $teamblock_atts['alternate']) {
