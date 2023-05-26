@@ -38,6 +38,8 @@ class App extends React.Component {
 
     }
 
+    return <p>No teammates to show.  Please fill out staff members on the WP dashboard to populate this page.</p>
+
   }
 
   // function to generate a row to display in the block for each staff member

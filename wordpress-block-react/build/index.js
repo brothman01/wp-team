@@ -48,6 +48,7 @@ class App extends (react__WEBPACK_IMPORTED_MODULE_1___default().Component) {
       });
       return people;
     }
+    return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, "No teammates to show.  Please fill out staff members on the WP dashboard to populate this page.");
   };
 
   // function to generate a row to display in the block for each staff member
