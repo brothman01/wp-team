@@ -3,7 +3,7 @@
  * WP Team
  *
  * @category  WordPress_Plugin
- * @package   Brothman-portfolio
+ * @package   WP-Team
  * @author    Ben Rothman <Ben@BenRothman.org>
  * @copyright 2023 Ben Rothman
  * @license   GPL-2.0+ https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html

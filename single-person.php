@@ -1,7 +1,15 @@
 <?php
-/*
-Template Name: Single Person
-*/
+/** * WP Team
+ *
+ * @category  WordPress_Plugin
+ * @package   WP-Team
+ * @author    Ben Rothman <Ben@BenRothman.org>
+ * @copyright 2023 Ben Rothman
+ * @license   GPL-2.0+ https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html
+ *
+ * Template Name: Single Person
+ */
+
 ?>
 
 <?php get_header(); ?>
@@ -27,7 +35,7 @@ Template Name: Single Person
 						</div>
 					</div>
 
-						<div class="bio-text"><? echo esc_attr( get_post_meta( get_the_ID(), 'br_bio', true ) ); ?></div>
+						<div class="bio-text"><?php echo esc_attr( get_post_meta( get_the_ID(), 'br_bio', true ) ); ?></div>
 			</div>
 
 			</div>
