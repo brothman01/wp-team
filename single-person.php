@@ -1,5 +1,5 @@
 <?php
-/** * WP Team
+/** WP Team
  *
  * @category  WordPress_Plugin
  * @package   WP-Team
