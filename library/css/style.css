@@ -1,6 +1,18 @@
-.span4 {float: left; width: 20%; height: 100%; }
-.span6 {float: left; width: 50%; }
-.span8 {float: left; width: 66%; }
+.span4 {
+	float: left;
+	width: 20%;
+	height: 100%;
+}
+
+.span6 {
+	float: left;
+	width: 50%;
+}
+
+.span8 {
+	float: left;
+	width: 66%;
+}
 
 .staff-member-div {
 	padding-top: 2em;
@@ -9,7 +21,6 @@
 	overflow: hidden;
 	width: 100%;
 	float: left;
-	width: 100%;
 }
 
 .staff-member-div div {
@@ -18,16 +29,15 @@
 
 .staff-portrait {
 	width: 124px;
-	margin: 0px auto;
+	margin: 0 auto;
 }
 
 .title-text {
-	color: grey;
+	color: rgb(128, 128, 128);
+	padding: 0 0 0 0;
 	padding-top: 1%;
 	text-align: center;
 	font-size: 1.5em;
-	padding: 0px 0px 0px 0px;
-	text-align: center;
 }
 
 .name-text {
@@ -35,18 +45,18 @@
 	float: left;
 	text-align: left;
 	font-size: 1.5em;
-	margin-bottom: 5px;;
+	margin-bottom: 5px;
 }
 
 .bio-text {
 	width: 100%;
 	float: left;
 	font-size: 1.2em;
-	line-height: 1.8em;
+	line-height: 29px;
 	padding-bottom: 4%;
 	text-align: left;
 }
 
 .cool-underline {
-	background: #10518F;
+	background: #10518f;
 }

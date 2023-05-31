@@ -3,7 +3,7 @@
  * WP Team
  *
  * @category  WordPress_Plugin
- * @package   Brothman-portfolio
+ * @package   WP-Team
  * @author    Ben Rothman <Ben@BenRothman.org>
  * @copyright 2023 Ben Rothman
  * @license   GPL-2.0+ https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html
@@ -18,16 +18,29 @@
  * License: GPL version 2 or later - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
+// prevent direct file access.
 if ( ! defined( 'ABSPATH' ) ) {
+
 	die( 'unauthorized' );
+
 }
 
+/**
+ * Rothmanportfolio class
+ *
+ * @since 0.1
+ */
 class Br_Staff {
 
+	/**
+	 * Rothmanportfolio contructor.  The constructor performs all of the methods necesarry to use an object of this class correctly.
+	 *
+	 * @since 0.1
+	 */
 	public function __construct() {
 
 		// Register Post Types.
-		require_once( 'post-types/br-person.php' );
+		require_once 'post-types/br-person.php';
 
 		// Enqueue CMB2.
 		if ( file_exists( dirname( __FILE__ ) . '/cmb2/init.php' ) ) {
@@ -49,28 +62,29 @@ class Br_Staff {
 		add_action( 'wp_enqueue_scripts', array( $this, 'brs_enqueue_styles' ) );
 
 		// vc block stuff.
-		include_once( plugin_dir_path( __FILE__ ) . 'vc_elements/class-teamblock.php' );
+		include_once plugin_dir_path( __FILE__ ) . 'vc_elements/class-teamblock.php';
 		$teamblock = new TeamBlock();
 
 		// WordPress block actions.
 		add_action( 'init', array( $this, 'brs_create_block' ) );
 		add_filter( 'register_post_type_args', array( $this, 'brs_add_cpts_to_api' ), 10, 2 );
+
 	}
 
 	/**
 	 * Single person shortcode callback function
-	 * 
+	 *
 	 * @param  array $atts Only has one item, the id of the staff member to draw information from.
-	 * 
+	 *
 	 * @return string The code that goes in place of the shortcode with all of the formmating and correct information.
-	 * 
+	 *
 	 * @since 0.1
 	 */
 	public function br_person_shortcode_function( $atts ) {
 
 		$attributes = shortcode_atts(
 			array(
-			'id'  => false,
+				'id' => false,
 			),
 			$atts
 		);
@@ -80,7 +94,7 @@ class Br_Staff {
 		$the_query = new WP_Query(
 			array(
 				'post_type' => 'br_person',
-				'p' => (int) $atts['id'],
+				'p'         => (int) $atts['id'],
 			)
 		);
 
@@ -110,6 +124,7 @@ class Br_Staff {
 		}
 
 		return $contents;
+
 	}
 
 	/**
@@ -121,8 +136,8 @@ class Br_Staff {
 	 */
 	public function brs_include_template( $template_path ) {
 
-		if ( get_post_type() == 'br_person' ) {
-				$theme_file = plugin_dir_path( __FILE__ ) . 'single-person.php';
+		if ( get_post_type() === 'br_person' ) {
+				$theme_file    = plugin_dir_path( __FILE__ ) . 'single-person.php';
 				$template_path = $theme_file;
 		}
 
@@ -132,55 +147,84 @@ class Br_Staff {
 
 	/**
 	 * Add new column for shortcodes to the CPT table.
-	 * @param  array $defaults : array of the columns that will show for each item in the CPT table.
-	 * 
-	 * @return none, changes the wp admin dashboard and add a column to a CPT.
-	 * 
-	 * @since 0.1
+	 *
+	 * @param  array $defaults : array of the columns and their valued that will show for each item in the CPT table.
+	 *
+	 * @return array $defaults : an array of the columns and values including anything added that will show in the wp admin dashboard in the CPT table.
+	 *
+	 * @since 1.0
 	 */
 	public function brs_columns_head( $defaults ) {
 
-		if ( 'br_person' == get_post_type() ) {
+		if ( 'br_person' === get_post_type() ) {
 			$defaults['shortcode'] = 'Shortcode';
 		}
-			return $defaults;
+
+		return $defaults;
+
 	}
 
-	 // show the featured image \\
+	/**
+	 * Fills in the shortcode column
+	 *
+	 * @param string $column_name : the name of the current column name in the current post.
+	 *
+	 * @param int    $post_id : the id of the current post.
+	 *
+	 * @since 0.1
+	 */
 	public function brs_columns_content( $column_name, $post_id ) {
-		if ( 'shortcode' == $column_name ) {
+
+		if ( 'shortcode' === $column_name ) {
 				echo '<input type="text" value="[br_person id=' . esc_attr( $post_id ) . ']"></input>';
 		}
+
 	}
 
 
 	/**
 	 * Load stylesheets, etc.
+	 *
+	 * @since 0.1
 	 */
 	public function brs_enqueue_styles() {
 
-		wp_enqueue_style( 'main-style', plugin_dir_url( __FILE__ ) . 'library/css/style.css' );
+		wp_enqueue_style( 'main-style', plugin_dir_url( __FILE__ ) . 'library/css/style.css', array(), '1.0.0' );
 
-		wp_enqueue_script( 'index', plugin_dir_url( __FILE__) . 'wordpress-block-react/build/index.js', array( 'wp-element' ), '1.0.0', true );
+		wp_enqueue_script( 'index', plugin_dir_url( __FILE__ ) . 'wordpress-block-react/build/index.js', array( 'wp-element' ), '1.0.0', true );
 
 	}
 
-	// Show every CPT in the REST API.
+	/**
+	 * Show every CPT in the REST API.
+	 *
+	 * @param array  $args : an array of the arguments used to declare the current post type.
+	 *
+	 * @param string $post_type : the name of the current post type.
+	 *
+	 * @since 1.1
+	 */
 	public function brs_add_cpts_to_api( $args, $post_type ) {
+
 		if ( 'result' === $post_type ) {
 			$args['show_in_rest'] = true;
 		}
 
 		return $args;
+
 	}
 
 
 	/**
 	 * Add the block to the WordPress block editor
+	 *
+	 * @since 1.1
 	 */
 	public function brs_create_block() {
+
 		register_block_type( __DIR__ . '/wordpress-block-vanillajs/build' );
 		register_block_type( __DIR__ . '/wordpress-block-react/build' );
+
 	}
 
 }
