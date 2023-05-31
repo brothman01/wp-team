@@ -7,9 +7,15 @@ jobs:
       name: WPCS
       runs-on: ubuntu-latest
       steps:
-        - uses: actions/checkout@v3
-        - name: WPCS check
+        - name: Checkout Action
+          uses: actions/checkout@v3
+
+        - name: WPCS Check
           uses: 10up/wpcs-action@stable
           with:
             paths: '.'
-            excludes: './wordpress-block-react/*/* ./wordpress-block-vanillajs/*/* ./CMB2/*'
+          
+paths-ignore:
+  - 'wordpress-block-react/*/*'
+  - 'wordpress-block-vanillajs/*/*'
+  - 'CMB2/*'
