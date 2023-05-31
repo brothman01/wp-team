@@ -11,4 +11,4 @@ jobs:
         - name: WPCS check
           uses: 10up/wpcs-action@stable
           with:
-            excludes: 'CMB2,wordpress-block-react'
+            excludes: 'CMB2,wordpress-block-react,wordpress-block-vanillajs'
