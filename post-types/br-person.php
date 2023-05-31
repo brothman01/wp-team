@@ -84,6 +84,7 @@ add_action( 'init', 'init_remove_support', 100 );
  * @since 0.1
  */
 function cmb2_initialize_metaboxes() {
+
 		$prefix = 'br_';
 
 		/**
@@ -145,4 +146,5 @@ function cmb2_initialize_metaboxes() {
 		);
 
 }
+
 add_action( 'cmb2_init', 'cmb2_initialize_metaboxes' );

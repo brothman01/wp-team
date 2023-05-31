@@ -20,7 +20,9 @@
 
 // prevent direct file access.
 if ( ! defined( 'ABSPATH' ) ) {
+
 	die( 'unauthorized' );
+
 }
 
 /**
@@ -66,6 +68,7 @@ class Br_Staff {
 		// WordPress block actions.
 		add_action( 'init', array( $this, 'brs_create_block' ) );
 		add_filter( 'register_post_type_args', array( $this, 'brs_add_cpts_to_api' ), 10, 2 );
+
 	}
 
 	/**
@@ -121,6 +124,7 @@ class Br_Staff {
 		}
 
 		return $contents;
+
 	}
 
 	/**
@@ -155,7 +159,9 @@ class Br_Staff {
 		if ( 'br_person' === get_post_type() ) {
 			$defaults['shortcode'] = 'Shortcode';
 		}
-			return $defaults;
+
+		return $defaults;
+
 	}
 
 	/**
@@ -168,9 +174,11 @@ class Br_Staff {
 	 * @since 0.1
 	 */
 	public function brs_columns_content( $column_name, $post_id ) {
+
 		if ( 'shortcode' === $column_name ) {
 				echo '<input type="text" value="[br_person id=' . esc_attr( $post_id ) . ']"></input>';
 		}
+
 	}
 
 
@@ -197,11 +205,13 @@ class Br_Staff {
 	 * @since 1.1
 	 */
 	public function brs_add_cpts_to_api( $args, $post_type ) {
+
 		if ( 'result' === $post_type ) {
 			$args['show_in_rest'] = true;
 		}
 
 		return $args;
+
 	}
 
 
@@ -211,8 +221,10 @@ class Br_Staff {
 	 * @since 1.1
 	 */
 	public function brs_create_block() {
+
 		register_block_type( __DIR__ . '/wordpress-block-vanillajs/build' );
 		register_block_type( __DIR__ . '/wordpress-block-react/build' );
+
 	}
 
 }
