@@ -1,22 +1,16 @@
-name: Your Workflow Name
+name: WPCS check
 
-on:
-  push:
-    branches:
-      - main
+on: [push, pull_request]
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v2
-
-      # Add your build and test steps here
-
-    # Add the following block to exclude multiple paths
-    paths-ignore:
-      - 'wordpress-block-react/*/*'
-      - 'wordpress-block-vanillajs/*/*'
-      - 'CMB2/*'
+  phpcs:
+      name: WPCS
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v3
+        - name: WPCS check
+          uses: 10up/wpcs-action@stable
+          with:
+            excludes: 'wordpress-block-react'
+            excludes: 'wordpress-block-vanillajs'
+            excludes: 'CMB2'
