@@ -11,6 +11,6 @@ jobs:
         - name: WPCS check
           uses: 10up/wpcs-action@stable
           with:
-            path-ignore: |
+            excludes: |
               wordpress-block-react/
               CMB2/
