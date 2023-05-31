@@ -1,6 +1,18 @@
-.span4 {float: left; width: 20%; height: 100%; }
-.span6 {float: left; width: 50%; }
-.span8 {float: left; width: 66%; }
+.span4 {
+	float: left;
+	width: 20%;
+	height: 100%;
+}
+
+.span6 {
+	float: left;
+	width: 50%;
+}
+
+.span8 {
+	float: left;
+	width: 66%;
+}
 
 .staff-member-div {
 	padding-top: 2em;
