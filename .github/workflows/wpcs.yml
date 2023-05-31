@@ -1,15 +1,18 @@
-name: WPCS check
-
-on: [push, pull_request]
+name: Your Workflow Name
+on:
+  push:
+    branches:
+      - main
 
 jobs:
-  phpcs:
-      name: WPCS
-      runs-on: ubuntu-latest
-      steps:
-        - uses: actions/checkout@v3
-        - name: WPCS check
-          uses: 10up/wpcs-action@stable
-          with:
-            ignore: 'wordpress-block-react/*,CMB2/*,CMB2/*/*
-              CMB2/
+  wpcs:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Run WPCS
+        uses: 10up/wpcs-action@master
+        with:
+          ignore: 'wordpress-block-react/*,CMB2/*,CMB2/*/*
