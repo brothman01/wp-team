@@ -2,13 +2,13 @@
 Contributors: brothman01
 Tags: team, staff, company, about, about us, who we are, our team
 Requires at least: 4.2
-Tested up to: 6.0.1
+Tested up to: 6.3
 Stable tag: 1.0.0
 License: GPL
 
 Just a simple WordPress plugin that adds a lightweight, responsive team page that beautifully shows visitors your team.  There are options to display this information with a shortcode, a WordPress block or a Visual Composer block.
 
-You can set the block settings to show info about a specific team member or the entire team.
+You can set the block settings to show info about a specific team member or the entire team by setting the Staff ID field to the ID of a specific staff member or leaving it blank to show the entire team.
 
 == Installation ==
 Download the plugin from the official WordPress repo and click \'Activate\' when the plugin has finished downloading or download a zip file of the plugin and install it manually.
