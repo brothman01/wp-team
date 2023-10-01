@@ -8,7 +8,7 @@ License: GPL
 
 Just a simple WordPress plugin that adds a lightweight, responsive team page that beautifully shows visitors your team.  There are options to display this information with a shortcode, a WordPress block or a Visual Composer block.
 
-You can set the block properties to show info about a specific team member or the entire team.
+You can set the block settings to show info about a specific team member or the entire team.
 
 == Installation ==
 Download the plugin from the official WordPress repo and click \'Activate\' when the plugin has finished downloading or download a zip file of the plugin and install it manually.

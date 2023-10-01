@@ -10,6 +10,14 @@
 	"supports": {
 		"html": false 
 	},
+	"attributes": {
+        "list_id": {
+            "type": "string"
+        },
+        "doubleoptin": {
+            "type": "boolean"
+        }
+    },
 	"textdomain": "example-dynamic",
 	"editorScript": "file:./editor.js",
 	"editorStyle": "file:./index.css",
