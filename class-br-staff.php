@@ -25,6 +25,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 }
 
+/* Require Composer autoloader */
+require_once dirname( __FILE__ ) . '/vendor/autoload.php';
+
 /**
  * Rothmanportfolio class
  *
@@ -43,10 +46,10 @@ class Br_Staff {
 		require_once 'post-types/br-person.php';
 
 		// Enqueue CMB2.
-		if ( file_exists( dirname( __FILE__ ) . '/cmb2/init.php' ) ) {
-			require_once dirname( __FILE__ ) . '/cmb2/init.php';
-		} elseif ( file_exists( dirname( __FILE__ ) . '/CMB2/init.php' ) ) {
-			require_once dirname( __FILE__ ) . '/CMB2/init.php';
+		if ( file_exists( dirname( __FILE__ ) . '/vendor/cmb2/init.php' ) ) {
+			require_once dirname( __FILE__ ) . '/vendor/cmb2/init.php';
+		} elseif ( file_exists( dirname( __FILE__ ) . '/vendor/CMB2/init.php' ) ) {
+			require_once dirname( __FILE__ ) . '/vendor/CMB2/init.php';
 		}
 
 		// add custom row to table.
@@ -183,7 +186,7 @@ class Br_Staff {
 
 
 	/**
-	 * Load stylesheets, etc.
+	 * Load stylesheets, load the block react and localize the rest url into the react block.
 	 *
 	 * @since 0.1
 	 */
@@ -191,7 +194,17 @@ class Br_Staff {
 
 		wp_enqueue_style( 'main-style', plugin_dir_url( __FILE__ ) . 'library/css/style.css', array(), '1.0.0' );
 
-		wp_enqueue_script( 'index', plugin_dir_url( __FILE__ ) . 'wordpress-block-react/build/index.js', array( 'wp-element' ), '1.0.0', true );
+		wp_register_script( 'index', plugin_dir_url( __FILE__ ) . 'wordpress-block-page/build/index.js', array( 'wp-element' ), '1.0.0', true );
+		
+		wp_localize_script(
+			'index',
+			'vars',
+			array(
+				'rest_url' => get_rest_url( null, '/wp/v2/br_person' ),
+			)
+		);
+
+		wp_enqueue_script( 'index' );
 
 	}
 
@@ -222,8 +235,7 @@ class Br_Staff {
 	 */
 	public function brs_create_block() {
 
-		register_block_type( __DIR__ . '/wordpress-block-vanillajs/build' );
-		register_block_type( __DIR__ . '/wordpress-block-react/build' );
+		register_block_type( __DIR__ . '/wordpress-block-page/build' );
 
 	}
 

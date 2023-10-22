@@ -1,0 +1,25 @@
+{
+    "name": "brothman01/wp-team",
+    "require": {
+        "cmb2/cmb2": "^2.2"
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "^3.6",
+        "wp-coding-standards/wpcs": "^2.3"
+    },
+    "autoload"    : {
+        "files": [
+            "vendor/cmb2/cmb2/init.php"
+        ]
+    },
+    "scripts": {
+        "lint": [
+            "phpcs --standard=WordPress --extensions=php --ignore=vendor ."
+        ]
+    },
+    "extra": {
+        "installer-paths": {
+            "vendor/cmb2/cmb2": ["cmb2/cmb2"]
+        }
+    }
+}
