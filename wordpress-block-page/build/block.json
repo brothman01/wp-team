@@ -18,7 +18,7 @@
       "type": "boolean"
     }
   },
-  "textdomain": "example-dynamic",
+  "textdomain": "wp-team",
   "editorScript": "file:./editor.js",
   "editorStyle": "file:./index.css",
   "style": "file:./style-index.css",
