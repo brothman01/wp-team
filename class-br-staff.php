@@ -10,11 +10,11 @@
  *
  * Plugin Name: WP Team
  * Plugin URI: http://wordpress.org/extend/plugins/wordpress-importer/
- * Description: Import posts, pages, comments, custom fields, categories, tags and more from a WordPress export file.
- * Author: wordpressdotorg
- * Author URI: http://wordpress.org/
- * Version: 0.6.3
- * Text Domain: wordpress-importer
+ * Description: Easily and display a beautiful team page showing your staff or team.
+ * Author: brothman01
+ * Author URI: http://benrothman.org/
+ * Version: 1.0.0
+ * Text Domain: wp-team
  * License: GPL version 2 or later - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
