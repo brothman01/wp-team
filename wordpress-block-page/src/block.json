@@ -1,0 +1,26 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "brothman01/team-page-block",
+	"version": "0.1.0",
+	"title": "Team Block (full page)",
+	"category": "embed",
+	"icon": "smiley",
+	"description": "Block to show a full team page based on the configuration entered in the backend.",
+	"supports": {
+		"html": false 
+	},
+	"attributes": {
+        "list_id": {
+            "type": "string"
+        },
+        "doubleoptin": {
+            "type": "boolean"
+        }
+    },
+	"textdomain": "example-dynamic",
+	"editorScript": "file:./editor.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"render": "file:./render.php"
+}
