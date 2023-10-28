@@ -19,9 +19,6 @@ import './style.scss';
  */
 import Edit from './edit';
 import metadata from './block.json';
-import App from './App.js';
-
-	ReactDOM.render(<App />, document.getElementById('team-block-page'));
 
 
 /**
