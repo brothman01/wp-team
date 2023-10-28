@@ -33,8 +33,8 @@ export default function Edit() {
 	return (
 		<p { ...useBlockProps() }>
 			{ __(
-				'Team page (react)',
-				'example-dynamic'
+				'Team Block (page)',
+				'wpteam'
 			) }
 		</p>
 	);

@@ -1,16 +1,16 @@
 {
   "$schema": "https://schemas.wp.org/trunk/block.json",
   "apiVersion": 2,
-  "name": "create-block/react-dynamic",
+  "name": "create-block/team-page-full",
   "version": "0.1.0",
-  "title": "Team Block (react)",
+  "title": "Team Block (page)",
   "category": "embed",
   "icon": "smiley",
-  "description": "Example block scaffolded with Create Block tool.",
+  "description": "A block used to place the entire team page.",
   "supports": {
     "html": false
   },
-  "textdomain": "example-dynamic",
+  "textdomain": "wpteam",
   "editorScript": "file:./editor.js",
   "editorStyle": "file:./index.css",
   "style": "file:./style-index.css",
