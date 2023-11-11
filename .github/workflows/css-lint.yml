@@ -14,5 +14,5 @@ jobs:
           INDENT_SPACES: 2
           PATTERN: "library/css/*.css"
       - uses: actions/setup-node@v1
-          with:
-            node-version: 16.16.0
+        with:
+          node-version: 16.16.0
