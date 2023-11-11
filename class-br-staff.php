@@ -191,7 +191,7 @@ class Br_Staff {
 
 		wp_enqueue_style( 'main-style', plugin_dir_url( __FILE__ ) . 'library/css/style.css', array(), '1.0.0' );
 
-		wp_enqueue_script( 'index', plugin_dir_url( __FILE__ ) . 'wordpress-block-react/build/index.js', array( 'wp-element' ), '1.0.0', true );
+		wp_enqueue_script( 'index', plugin_dir_url( __FILE__ ) . 'wordpress-block/build/index.js', array( 'wp-element' ), '1.0.0', true );
 
 	}
 
@@ -222,8 +222,7 @@ class Br_Staff {
 	 */
 	public function brs_create_block() {
 
-		register_block_type( __DIR__ . '/wordpress-block-vanillajs/build' );
-		register_block_type( __DIR__ . '/wordpress-block-react/build' );
+		register_block_type( __DIR__ . '/wordpress-block/build' );
 
 	}
 

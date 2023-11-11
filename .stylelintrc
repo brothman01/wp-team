@@ -1,7 +1,7 @@
 {
  "ignorePatterns": [
-   "../../wordpress-block-react/node_modules/**/*.css",
-   "../../wordpress-block-react/build/*.css",
+   "../../wordpress-block/node_modules/**/*.css",
+   "../../wordpress-block/build/*.css",
    "../../library/css/*.min.css"
  ],
  "extends": "@wordpress/stylelint-config"
