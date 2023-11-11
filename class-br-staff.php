@@ -25,6 +25,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 }
 
+
 /**
  * Rothmanportfolio class
  *
@@ -38,15 +39,17 @@ class Br_Staff {
 	 * @since 0.1
 	 */
 	public function __construct() {
+		/* Require Composer autoloader */
+		require_once dirname( __FILE__ ) . '/vendor/autoload.php';
 
 		// Register Post Types.
 		require_once 'post-types/br-person.php';
 
-		// Enqueue CMB2.
-		if ( file_exists( dirname( __FILE__ ) . '/cmb2/init.php' ) ) {
-			require_once dirname( __FILE__ ) . '/cmb2/init.php';
-		} elseif ( file_exists( dirname( __FILE__ ) . '/CMB2/init.php' ) ) {
-			require_once dirname( __FILE__ ) . '/CMB2/init.php';
+		// load and start CMB2.
+		if ( file_exists( dirname( __FILE__ ) . '/vendor/cmb2/init.php' ) ) {
+			require_once dirname( __FILE__ ) . '/vendor/cmb2/init.php';
+		} elseif ( file_exists( dirname( __FILE__ ) . '/vendor/CMB2/init.php' ) ) {
+			require_once dirname( __FILE__ ) . '/vendor/CMB2/init.php';
 		}
 
 		// add custom row to table.
