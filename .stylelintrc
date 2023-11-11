@@ -1,7 +1,7 @@
 {
  "ignorePatterns": [
    "../../wordpress-block/node_modules/**/*.css",
-   "../../wordpress-block/src/*.scss",
+   "../../wordpress-block/src/style.scss",
    "../../wordpress-block/build/*.css",
    "../../library/css/*.min.css"
  ],
