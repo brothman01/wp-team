@@ -8,16 +8,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: checkout
-        uses: actions/checkout@v3
-
-      - name: stylelint
-        uses: actions-hub/stylelint@master
+      - uses: actions/checkout@v3
+      - uses: actions-hub/stylelint@master
         env:
           INDENT_SPACES: 2
           PATTERN: "library/css/*.css"
-        
-        - name: Set up Node.js
+      - name: Set up Node.js
           uses: actions/setup-node@v1
           with:
             node-version: 16.16.0
