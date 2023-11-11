@@ -6,7 +6,8 @@
 	"license": "GPL-2.0-or-later",
 	"main": "build/index.js",
 	"scripts": {
-		"install": "git submodule update --init"
+		"install": "git submodule update --init",
+		"lint:style": "wp-scripts lint-style"
 	},
 	"devDependencies": {
 		"@wordpress/scripts": "^26.16.0",
