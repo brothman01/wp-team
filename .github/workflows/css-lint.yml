@@ -16,4 +16,4 @@ jobs:
         env:
           INDENT_SPACES: 2
           PATTERN: "library/css/*.css"
-          node-version: 16.16.0
+          node: 16.16.0
