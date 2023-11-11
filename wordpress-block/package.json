@@ -16,6 +16,6 @@
 		"start": "wp-scripts start editor=./src/editor.js index=./src/index.js --webpack-copy-php"
 	},
 	"devDependencies": {
-		"@wordpress/scripts": "^26.1.0"
+		"@wordpress/scripts": "^26.16.0"
 	}
 }

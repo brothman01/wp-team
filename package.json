@@ -9,7 +9,7 @@
 		"install": "git submodule update --init"
 	},
 	"devDependencies": {
-		"@wordpress/scripts": "^26.1.0",
+		"@wordpress/scripts": "^26.16.0",
 		"@wordpress/stylelint-config": "^21.17.0",
 		"react": "^18.0.0",
 		"react-dom": "^18.0.0",
